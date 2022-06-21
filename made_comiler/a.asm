@@ -1,0 +1,53 @@
+LVALUE 가
+PUSH 1
+:=
+LVALUE 나
+PUSH 3
+:=
+LVALUE 다
+PUSH 0
+:=
+LVALUE 라
+PUSH 2
+:=
+LVALUE 마
+PUSH 1
+:=
+LVALUE 바
+PUSH 5
+:=
+LABEL loc 
+RVALUE 가
+RVALUE 바
+-
+ COPY 
+ GOMINUS memloc
+ GOFALSE memloc
+LVALUE 다
+RVALUE 나
+RVALUE 다
++
+:=
+LVALUE 가
+RVALUE 가
+RVALUE 마
++
+:=
+RVALUE 가
+RVALUE 나
+GOTO loc 
+LABEL memloc 
+LVALUE 마
+RVALUE 마
+RVALUE 마
++
+:=
+HALT
+$ -- END OF EXECUTION CODE AND START OF VAR DEFINITIONS --
+DW 가
+DW 나
+DW 다
+DW 라
+DW 마
+DW 바
+END
